@@ -2,9 +2,9 @@
 
 A real-time voice AI agent built with Groq API that enables natural voice conversations with configurable AI models, voices, and system prompts.
 
-<video height="400" controls>
-  <source src="./voice-agent.mp4" type="video/mp4">
-</video>
+
+https://github.com/user-attachments/assets/837f11d5-05e3-4469-bec5-268e095ed5df
+
 
 ## Overview
 
