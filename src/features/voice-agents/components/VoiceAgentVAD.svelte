@@ -921,7 +921,8 @@
       const firstByteTimeout = setTimeout(() => {
         console.warn("Poor network connection. Expect audio degradation.");
         error = "Poor network connection. Expect audio degradation.";
-      }, 3000); // 3 second threshold
+      }, 3000); 
+      // 3 second threshold
 
       // Stream the audio response directly from Groq API
       const response = await fetch(
