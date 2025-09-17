@@ -1,0 +1,9 @@
+{
+    "name": "groq-voice-agent-template",
+    "compatibility_date": "2025-01-01",
+    "assets": {
+      "directory": "./dist",
+      "binding": "ASSETS",
+      "not_found_handling": "single-page-application"
+    }
+  }

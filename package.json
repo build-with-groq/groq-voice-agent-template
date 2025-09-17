@@ -10,6 +10,7 @@
     "check": "svelte-check --tsconfig ./tsconfig.app.json && tsc -p tsconfig.node.json"
   },
   "devDependencies": {
+    "@cloudflare/vite-plugin": "^1.13.2",
     "@lucide/svelte": "^0.487.0",
     "@sveltejs/vite-plugin-svelte": "^5.0.3",
     "@tailwindcss/container-queries": "^0.1.1",
