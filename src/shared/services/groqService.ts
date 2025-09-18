@@ -14,6 +14,7 @@ function createGroqService(): GroqService {
   // Create the Groq client with an empty API key initially
   const client = new Groq({
     apiKey: '',
+    baseURL: 'https://demo-proxy.groqcloud.dev',
     dangerouslyAllowBrowser: true
   });
 
