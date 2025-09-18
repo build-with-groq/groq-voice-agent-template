@@ -26,3 +26,5 @@ dist/node-types
 *.njsproj
 *.sln
 *.sw?
+
+.wrangler
