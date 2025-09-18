@@ -169,10 +169,6 @@
   // Handle diagram start event (play button)
   function handleDiagramStart() {
     // Check for API key before starting
-    if (!apiKeyStore.hasApiKey()) {
-      openApiKeyModal();
-      return;
-    }
     if (status === "Idle") {
       // Reset shutdown flag when starting explicitly
       isShutDown = false;
@@ -616,11 +612,6 @@
 
   // Handle start chat event from animation
   function handleStartChat() {
-    // Check for API key before starting
-    if (!apiKeyStore.hasApiKey()) {
-      openApiKeyModal();
-      return;
-    }
     // Make sure we're in idle state before starting
     if (status !== "Idle") {
       // If not idle, force a reset first
@@ -741,11 +732,6 @@
   // Send the audio to the backend for transcription
   async function sendAudioForTranscription(audioBlob: Blob) {
     try {
-      // Check if we have an API key
-      if (!apiKey) {
-        throw new Error("No API key available. Please check your activation.");
-      }
-
       // Create form data
       const formData = new FormData();
       const audioFile = new File([audioBlob], "recording.wav", {
@@ -756,11 +742,11 @@
 
       // Send to Groq API directly
       const response = await fetch(
-        "https://api.groq.com/openai/v1/audio/transcriptions",
+        "https://demo-proxy.groqcloud.dev/openai/v1/audio/transcriptions",
         {
           method: "POST",
           headers: {
-            Authorization: `Bearer ${apiKey}`,
+            ...(apiKey ? { Authorization: `Bearer ${apiKey}` } : {}),
           },
           body: formData,
         },
@@ -836,11 +822,6 @@
     if (!text) return;
 
     try {
-      // Check if we have an API key
-      if (!apiKey) {
-        throw new Error("No API key available.");
-      }
-
       // Status update - explicitly set to Responding before playback
       status = "Responding";
       // Make sure audio buffer is initialized
@@ -926,11 +907,11 @@
 
       // Stream the audio response directly from Groq API
       const response = await fetch(
-        "https://api.groq.com/openai/v1/audio/speech",
+        "https://demo-proxy.groqcloud.dev/openai/v1/audio/speech",
         {
           method: "POST",
           headers: {
-            Authorization: `Bearer ${apiKey}`,
+            ...(apiKey ? { Authorization: `Bearer ${apiKey}` } : {}),
             "Content-Type": "application/json",
           },
           body: JSON.stringify({
@@ -1005,11 +986,11 @@
           ttsRequestController = fallbackController;
 
           const fullResponse = await fetch(
-            "https://api.groq.com/openai/v1/audio/speech",
+            "https://demo-proxy.groqcloud.dev/openai/v1/audio/speech",
             {
               method: "POST",
               headers: {
-                Authorization: `Bearer ${apiKey}`,
+                ...(apiKey ? { Authorization: `Bearer ${apiKey}` } : {}),
                 "Content-Type": "application/json",
               },
               body: JSON.stringify({
