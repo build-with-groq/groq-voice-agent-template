@@ -10,6 +10,8 @@ https://github.com/user-attachments/assets/837f11d5-05e3-4469-bec5-268e095ed5df
 
 This application demonstrates real-time voice interaction using Groq API for ultra-fast speech-to-text, AI inference, and text-to-speech capabilities. Built as a complete, end-to-end template that you can fork, customize, and deploy.
 
+👉 [**Live Demo Link**](https://groq-voice-agent-template.vercel.groqcloud.net/) 👈
+
 **Key Features:**
 - **Real-time Voice Conversations**: Talk naturally with an AI agent using voice activity detection (VAD)
 - **Visual Flow Diagram**: Interactive node-based visualization showing the voice processing pipeline in real-time
